@@ -1,0 +1,141 @@
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        body {
+            font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+            background: #858585;
+            color: #111827;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding: 24px;
+        }
+
+        /* Layout */
+        .section { max-width: 900px; margin: 24px auto; }
+
+        /* Sections */
+        .section {
+            background: #fff;
+            border: 1px solid #e6ecf5;
+            border-radius: 10px;
+            padding: 18px;
+            box-shadow: 0 6px 14px rgba(15,23,42,0.04);
+        }
+
+        .section-title {
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        /* Steps container */
+        .steps-container {
+            position: relative;
+            min-height: 200px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .step {
+            padding: 10px;
+            background: #fbfdff;
+            border-left: 4px solid #cfe1ff;
+            border-radius: 6px;
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            display: flex;
+            gap: 15px;
+            color: #1f2937;
+        }
+
+        .step.active {
+            opacity: 1;
+            pointer-events: auto;
+            box-shadow: 0 2px 8px rgba(15,23,42,0.08);
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0b69ff;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+
+        .step.active .step-number {
+            background: #0f4fd6;
+        }
+
+        .step-text {
+            color: #374151;
+            font-size: 0.9375rem;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 18px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: 1px solid #e6ecf5;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #fbfdff;
+            color: #1f2937;
+        }
+
+        .btn-prev {
+            background: #fbfdff;
+            border-color: #e6ecf5;
+            color: #374151;
+        }
+
+        .btn-prev:hover:not(:disabled) {
+            background: #f3f7fb;
+            border-color: #cfe1ff;
+        }
+
+        .btn-next {
+            background: #0b69ff;
+            border-color: #0b69ff;
+            color: white;
+        }
+
+        .btn-next:hover:not(:disabled) {
+            background: #0f4fd6;
+            border-color: #0f4fd6;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .step-counter {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.875rem;
+            margin-top: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            body { padding: 12px; }
+            .section { padding: 14px; }
+        }
