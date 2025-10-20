@@ -1,5 +1,9 @@
- * { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body { height: 100%; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body { height: 100%;
+        margin: 0;
+        scroll-behavior: smooth; /* smooth scrolling */
+}
         body {
             font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
             background: #858585;
@@ -7,18 +11,33 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             padding: 24px;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory; 
         }
 
-        /* Layout */
-        .section { max-width: 900px; margin: 24px auto; }
+    .section {
+        background: #fff;
+        border: 1px solid #e6ecf5;
+        border-radius: 10px;
+        padding: 24px;
+        box-shadow: 0 6px 14px rgba(15,23,42,0.04);
+        max-width: 900px;
+        margin: 24px auto;
+        min-height: 50vh; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        scroll-snap-align: start;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.6s ease;
+    }
 
-        /* Sections */
-        .section {
-            background: #fff;
-            border: 1px solid #e6ecf5;
-            border-radius: 10px;
-            padding: 18px;
-            box-shadow: 0 6px 14px rgba(15,23,42,0.04);
+                
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-title {
@@ -30,25 +49,26 @@
 
         /* Steps container */
         .steps-container {
-            position: relative;
-            min-height: 200px;
             list-style: none;
             padding: 0;
+            display: grid;
+            gap: 12px;
         }
 
         .step {
-            padding: 10px;
-            background: #fbfdff;
-            border-left: 4px solid #cfe1ff;
-            border-radius: 6px;
-            position: absolute;
-            width: 100%;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-            display: flex;
-            gap: 15px;
-            color: #1f2937;
+            padding: 12px;
+        background: #fbfdff;
+        border-left: 4px solid #cfe1ff;
+        border-radius: 6px;
+        position: relative; /* ikke absolute */
+        width: 100%;
+        opacity: 1;
+        pointer-events: auto;
+        transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.28s ease;
+        display: flex;
+        gap: 15px;
+        color: #1f2937;
+        transform: translateY(6px);
         }
 
         .step.active {
@@ -141,3 +161,33 @@
             body { padding: 12px; }
             .section { padding: 14px; }
         }
+
+        .page::after{
+        content: "↓";
+        position: fixed;
+        right: 2rem;
+        bottom: 2rem;
+        width: 60px;
+        height: 60px;
+        display: grid;
+        place-items: center;
+        background: rgba(102,126,234,0.9);
+        color: #fff;
+        border-radius: 50%;
+        font-size: 2rem;
+        z-index: 50;
+        box-shadow: 0 10px 20px rgba(102,126,234,0.25);
+        transform: translateY(0);
+        opacity: 1;
+        transition: transform .36s cubic-bezier(.2,.9,.2,1), opacity .36s ease;
+        pointer-events: none;
+    }
+
+    .page.hide-scroll-indicator::after{
+        opacity: 0;
+        transform: translateY(10px) scale(.95);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+        .page::after, .page.hide-scroll-indicator::after{ transition: none; transform: none; }
+    }
