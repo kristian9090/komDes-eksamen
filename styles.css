@@ -1,108 +1,184 @@
-/* ...existing code... */
-/* Konsolidert base */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
+/* === GLOBAL RESET === */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+    background: #858585;
+    color: #111827;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
-  background: #858585;
-  color: #111827;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  padding: 24px;
-  /* fjernet overflow-y: scroll for å unngå alltid-visible scrollbar */
+    padding: 24px;
 }
 
-/* Seksjoner: ikke fast høyde, ryddet padding/width */
+/* === SEKSJONER === */
 .section {
-  background: #fff;
-  border: 1px solid #e6ecf5;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 6px 14px rgba(15,23,42,0.04);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto 1.5rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+    background: #fff;
+    border: 1px solid #e6ecf5;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+    max-width: 35%;
+    margin: 0 auto 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* JS kan legge .visible for å animere inn */
-.section.visible { opacity: 1; transform: none; }
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-.section-title { font-size: 1.125rem; margin-bottom: 16px; color: #0f172a; font-weight: 600; }
+.section-title {
+    font-size: 1.125rem;
+    margin-bottom: 16px;
+    color: #0f172a;
+    font-weight: 600;
+}
 
-/* Steps container: normal dokumentflyt (ikke absolutte steg) */
+/* === STEPS / INTERAKTIVE PUNKTER === */
+.steps-wrapper {
+    padding: 0;
+}
+
 .steps-container {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-/* Hvert steg i normal flyt (tidligere absolute => skjulte elementer) */
+/* Skjul alle steg som default */
 .step {
-  padding: 12px;
-  background: #fbfdff;
-  border-left: 4px solid #cfe1ff;
-  border-radius: 6px;
-  position: relative;
-  width: 100%;
-  opacity: 1;
-  pointer-events: auto;
-  transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.28s ease;
-  display: flex;
-  gap: 15px;
-  color: #1f2937;
-  transform: translateY(6px);
+    display: none;           /* skjul som standard */
+    padding: 12px;
+    background: #fbfdff;
+    border-left: 4px solid #cfe1ff;
+    border-radius: 6px;
+    gap: 15px;
+    color: #1f2937;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.28s ease;
+    /* fjern ekstra 'display' her */
 }
 
-/* Dempe ikke-aktive steg visuelt, men ikke skjul */
-.step:not(.active) { opacity: 0.9; transform: translateY(0); }
-.step.active { box-shadow: 0 2px 8px rgba(15,23,42,0.08); border-left-color: #0b69ff; transform: translateY(-4px); }
+/* Kun aktivt steg vises */
+.step.active {
+    display: flex;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    border-left-color: #0b69ff;
+    transform: translateY(0);
+}
 
 /* Nummer og tekst */
 .step-number {
-  display:flex; align-items:center; justify-content:center;
-  background:#0b69ff; color:#fff; width:32px; height:32px; border-radius:50%;
-  font-weight:600; font-size:0.875rem; flex-shrink:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b69ff;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 0.875rem;
+    flex-shrink: 0;
 }
-.step.active .step-number { background:#0f4fd6; }
-.step-text { color:#374151; font-size:0.9375rem; white-space:normal; word-break:break-word; }
 
-/* Knapper: konsolidert */
+.step.active .step-number {
+    background: #0f4fd6;
+}
+
+.step-text {
+    color: #374151;
+    font-size: 0.9375rem;
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* === KNAPPER / KONTROLLER === */
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 18px;
+}
+
 button {
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
+
+/* Forrige knapp */
 .btn-prev {
-  background:#fbfdff; border:1px solid #e6ecf5; color:#374151;
+    background: #fbfdff;
+    border: 1px solid #e6ecf5;
+    color: #374151;
 }
+
+.btn-prev:hover:not(:disabled) {
+    background: #f3f7fb;
+    border-color: #cfe1ff;
+}
+
+/* Neste knapp */
 .btn-next {
-  background:#0b69ff; border:1px solid #0b69ff; color:#fff;
+    background: #0b69ff;
+    border: 1px solid #0b69ff;
+    color: white;
 }
-button:disabled { opacity:0.5; cursor:not-allowed; }
 
-/* Step-teller */
-.step-counter { text-align:center; color:#64748b; font-size:0.875rem; margin-top:12px; }
+.btn-next:hover:not(:disabled) {
+    background: #0f4fd6;
+    border-color: #0f4fd6;
+}
 
-/* Tilgjengelighet: redusert bevegelse */
+/* Disabled state */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Step teller */
+.step-counter {
+    text-align: center;
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-top: 12px;
+}
+
+/* === RESPONSIVITET === */
+@media (max-width: 640px) {
+    body { padding: 12px; }
+    .section { padding: 1rem; margin-bottom: 1rem; }
+}
+
+/* === REDUSERT BEVEGELSE / TILGJENGELIGHET === */
 @media (prefers-reduced-motion: reduce) {
-  .section, .step { transition: none; animation: none; }
+    .section, .step {
+        transition: none;
+        animation: none;
+    }
 }
-
-/* Responsive små tweaks */
-@media (max-width:640px) {
-  body { padding: 12px; }
-  .section { padding: 1rem; margin-bottom: 1rem; }
-}
-/* ...existing code... */

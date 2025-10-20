@@ -17,48 +17,109 @@
         </section>
 
         <section id="process" class="section process">
-            <h2 class="section-title">En typisk svindel kan settes opp slik:</h2>
-             <ol class="steps-container" id="stepsContainer">
+    <h2 class="section-title">En typisk svindel kan settes opp slik:</h2>
+    <div class="steps-wrapper">
+        <ol class="steps-container" id="stepsContainer">
             <li class="step active" data-step="1">
                 <span class="step-number">1</span>
-                <span class="step-text">Først må man samle inn data, det kan være eposter, telefonnummer, eller brukere på en sosial medier. Disse kan kjøpes eller finnes offentlig på internett. AI i dag gjør dette mye enklere enn før.</span>
+                <span class="step-text">
+                    Først må man samle inn data, det kan være eposter, telefonnummer, eller brukere på sosiale medier. 
+                    Disse kan kjøpes eller finnes offentlig på internett. AI i dag gjør dette mye enklere enn før.
+                </span>
             </li>
-            
             <li class="step" data-step="2">
                 <span class="step-number">2</span>
-                <span class="step-text">Deretter målretter svindlerne angrepet ut fra hva de ønsker å oppnå. Det kan være «spear phishing», eller vanlig «phishing» for eksempel, alt ettersom hva som er mest lønnsomt.</span>
+                <span class="step-text">
+                    Deretter målretter svindlerne angrepet ut fra hva de ønsker å oppnå. 
+                    Det kan være «spear phishing», eller vanlig «phishing», alt ettersom hva som er mest lønnsomt.
+                </span>
             </li>
-            
             <li class="step" data-step="3">
                 <span class="step-number">3</span>
-                <span class="step-text">Så setter man opp lokkemiddelet, det kan være falske nettsider, eposter eller SMS. Lokkemiddelet er laget for å etterligne noe ekte, de bruker ofte ekte merkevarer og utgir seg for å være dem. Svindlere finner ferdige maler fra nettet for de vet gjerne at de funker fra tidligere ofre.</span>
+                <span class="step-text">
+                    Så setter man opp lokkemiddelet, det kan være falske nettsider, eposter eller SMS. 
+                    Lokkemiddelet er laget for å etterligne noe ekte, ofte med ekte merkevarer.
+                </span>
             </li>
-            
             <li class="step" data-step="4">
                 <span class="step-number">4</span>
-                <span class="step-text">I neste steg tar svindleren kontakt med offeret. Målet er å skape frykt, stress eller få offeret til å tro at det kan vinne noe. Eksempelvis kan en melding si: «din konto er sperret, trykk på lenken for å gjenopprette». Videre fører lenken til en nettside der blir bedt om å fylle inn personlig eller bank informasjon.</span>
+                <span class="step-text">
+                    Svindleren tar kontakt med offeret for å skape frykt eller stress. 
+                    Eksempel: «Din konto er sperret, trykk på lenken for å gjenopprette».
+                </span>
             </li>
-            
             <li class="step" data-step="5">
                 <span class="step-number">5</span>
-                <span class="step-text">Svindleren forsøker å overføre penger fra denne kontoen til ofte utenlandske kontoer. Det er mye vanskeligere å spore.</span>
+                <span class="step-text">
+                    Svindleren forsøker å overføre penger fra offerets konto til ofte utenlandske kontoer.
+                </span>
             </li>
-            
             <li class="step" data-step="6">
                 <span class="step-number">6</span>
-                <span class="step-text">Når pengene flyttes mellom utenlandske kontoer eller brukes til digitale kjøp, blir pengene vanskelige å spore.</span>
+                <span class="step-text">
+                    Når pengene flyttes mellom utenlandske kontoer eller brukes til digitale kjøp, blir de vanskelige å spore.
+                </span>
             </li>
         </ol>
-        <div class="controls">
-            <button class="btn-prev" id="prevBtn" onclick="previousStep()">← Forrige</button>
-            <button class="btn-next" id="nextBtn" onclick="nextStep()">Neste →</button>
-        </div>
+    </div>
 
-        <div class="step-counter">
-            Steg <span id="currentStep">1</span> av <span id="totalSteps">6</span>
-        </div>
-         <script>
-        let currentStep = 1;
+    <div class="controls">
+        <button class="btn-prev" id="prevBtn" onclick="previousStep()">← Forrige</button>
+        <button class="btn-next" id="nextBtn" onclick="nextStep()">Neste →</button>
+    </div>
+
+    <div class="step-counter">
+        Steg <span id="currentStep">1</span> av <span id="totalSteps">6</span>
+    </div>
+</section>
+        <section id="human-factor" class="section human-factor">
+            <p class="text">Slik kan en typisk svindel se ut. Mye av prosessen kan automatiseres, men det er alltid et menneske bak. Det svakeste leddet er som sagt oss mennesker og godviljen vår. Svindlerne vet hvordan menneske hjernen er «programmert» og når vi mister sunn fornuft. De spiller på følelser som frykt, tidspress, sexuell nytelse, hastverk, autoritet eller sosialt press.</p>
+        </section>
+
+        <section id="guidelines" class="section guidelines">
+            <h2 class="section-title">Da kan man ha noen huskeregler:</h2>
+            <ul class="tips-list">
+                <li class="tip">Ingenting må gjøres nå.</li>
+                <li class="tip">Se på URL — ligner den på en annen, men har stavefeil er dette en ekte nettside egentlig?</li>
+                <li class="tip">Vær skeptisk til betalingskrav i krypto eller gavekort.</li>
+                <li class="tip">Er noe for godt til å være sant, er det også det.</li>
+                <li class="tip">Ikke del passord eller annet kritisk informasjon.</li>
+            </ul>
+        </section>
+
+        <section id="legal-ai" class="section legal-ai">
+            <p class="text">Mange svindlere utnytter gråsoner i loven med pyramidespill eller falske investeringstips. Disse områdene er gråsoner for loven, der man betaler selv egne penger og lurer oss selv på en måte. Her er det vanskelig for politiet å gripe inn fordi man samtykker selv.</p>
+            <p class="text">Med utviklingen til AI vil svindlerne bli mer effektive på flere områder, de vil blant annet bli enda flinkere på spear phishing. Ved å finne alle dine sosiale medier raskere, analysere dem og vite hva som er best å spille på. AI er veldig flinke på å analysere dine sosiale medier og tilpasse angrepet til enkeltpersoner. Altså de personaliserer svindelen bedre mot deg. Men når angrepet blir mer avansert vil forsvaret også bli det.</p>
+        <br>
+            <p class="text">Selv om vår egen atferd ofte er den skjulte trussel på nettet er det egne tiltak man bør gjøre. Man bør aktivere to faktor autentisering som gjør det mye vanskeligere å få tilgang til kontoer selv om passordet blir stjålet. Passordbehandlere gjør det enkelt å ha kontroll på passordene sine, og ikke minst bruke unike passord. Å ha programmene og operativsystemet oppdatert er viktig da hackerne er flinke på å finne sikkerhetshull, som forhåpentligvis er dekket i de nyeste oppdateringene.</p>
+        </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer">
+        <p class="copyright">&copy; 2024 Sample Page</p>
+    </footer>
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  },
+  {
+    threshold: 0.5
+  }
+);
+
+sections.forEach(section => observer.observe(section));
+
+
+ let currentStep = 1;
         const totalSteps = 6;
 
         function showStep(step) {
@@ -92,57 +153,6 @@
         // Initialisering
         document.getElementById('totalSteps').textContent = totalSteps;
         showStep(1);
-    </script>
-        </section>
-
-        <section id="human-factor" class="section human-factor">
-            <p class="text">Slik kan en typisk svindel se ut. Mye av prosessen kan automatiseres, men det er alltid et menneske bak. Det svakeste leddet er som sagt oss mennesker og godviljen vår. Svindlerne vet hvordan menneske hjernen er «programmert» og når vi mister sunn fornuft. De spiller på følelser som frykt, tidspress, sexuell nytelse, hastverk, autoritet eller sosialt press.</p>
-        </section>
-
-        <section id="guidelines" class="section guidelines">
-            <h2 class="section-title">Da kan man ha noen huskeregler:</h2>
-            <ul class="tips-list">
-                <li class="tip">Ingenting må gjøres nå.</li>
-                <li class="tip">Se på URL — ligner den på en annen, men har stavefeil er dette en ekte nettside egentlig?</li>
-                <li class="tip">Vær skeptisk til betalingskrav i krypto eller gavekort.</li>
-                <li class="tip">Er noe for godt til å være sant, er det også det.</li>
-                <li class="tip">Ikke del passord eller annet kritisk informasjon.</li>
-            </ul>
-        </section>
-
-        <section id="legal-ai" class="section legal-ai">
-            <p class="text">Mange svindlere utnytter gråsoner i loven med pyramidespill eller falske investeringstips. Disse områdene er gråsoner for loven, der man betaler selv egne penger og lurer oss selv på en måte. Her er det vanskelig for politiet å gripe inn fordi man samtykker selv.</p>
-            <p class="text">Med utviklingen til AI vil svindlerne bli mer effektive på flere områder, de vil blant annet bli enda flinkere på spear phishing. Ved å finne alle dine sosiale medier raskere, analysere dem og vite hva som er best å spille på. AI er veldig flinke på å analysere dine sosiale medier og tilpasse angrepet til enkeltpersoner. Altså de personaliserer svindelen bedre mot deg. Men når angrepet blir mer avansert vil forsvaret også bli det.</p>
-        </section>
-
-        <section id="security" class="section security">
-            <p class="text">Selv om vår egen atferd ofte er den skjulte trussel på nettet er det egne tiltak man bør gjøre. Man bør aktivere to faktor autentisering som gjør det mye vanskeligere å få tilgang til kontoer selv om passordet blir stjålet. Passordbehandlere gjør det enkelt å ha kontroll på passordene sine, og ikke minst bruke unike passord. Å ha programmene og operativsystemet oppdatert er viktig da hackerne er flinke på å finne sikkerhetshull, som forhåpentligvis er dekket i de nyeste oppdateringene.</p>
-        </section>
-    </main>
-
-    <footer id="site-footer" class="site-footer">
-        <p class="copyright">&copy; 2024 Sample Page</p>
-    </footer>
-    <script>
-        const sections = document.querySelectorAll('.section');
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
-    });
-  },
-  {
-    threshold: 0.5 // 50% av seksjonen må være synlig
-  }
-);
-
-sections.forEach(section => observer.observe(section));
-
     </script>
 </body>
 </html>
