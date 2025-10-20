@@ -1,193 +1,108 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        html, body { height: 100%;
-        margin: 0;
-        scroll-behavior: smooth; /* smooth scrolling */
+/* ...existing code... */
+/* Konsolidert base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+  background: #858585;
+  color: #111827;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding: 24px;
+  /* fjernet overflow-y: scroll for å unngå alltid-visible scrollbar */
 }
-        body {
-            font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
-            background: #858585;
-            color: #111827;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            padding: 24px;
-            overflow-y: scroll;
-            scroll-snap-type: y mandatory; 
-        }
 
-    .section {
-        background: #fff;
-        border: 1px solid #e6ecf5;
-        border-radius: 10px;
-        padding: 24px;
-        box-shadow: 0 6px 14px rgba(15,23,42,0.04);
-        max-width: 900px;
-        margin: 24px auto;
-        min-height: 50vh; 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        scroll-snap-align: start;
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.6s ease;
-    }
+/* Seksjoner: ikke fast høyde, ryddet padding/width */
+.section {
+  background: #fff;
+  border: 1px solid #e6ecf5;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 6px 14px rgba(15,23,42,0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
 
-                
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+/* JS kan legge .visible for å animere inn */
+.section.visible { opacity: 1; transform: none; }
 
-        .section-title {
-            font-size: 1.125rem;
-            margin-bottom: 16px;
-            color: #0f172a;
-            font-weight: 600;
-        }
+.section-title { font-size: 1.125rem; margin-bottom: 16px; color: #0f172a; font-weight: 600; }
 
-        /* Steps container */
-        .steps-container {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            gap: 12px;
-        }
+/* Steps container: normal dokumentflyt (ikke absolutte steg) */
+.steps-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
 
-        .step {
-            padding: 12px;
-        background: #fbfdff;
-        border-left: 4px solid #cfe1ff;
-        border-radius: 6px;
-        position: relative; /* ikke absolute */
-        width: 100%;
-        opacity: 1;
-        pointer-events: auto;
-        transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.28s ease;
-        display: flex;
-        gap: 15px;
-        color: #1f2937;
-        transform: translateY(6px);
-        }
+/* Hvert steg i normal flyt (tidligere absolute => skjulte elementer) */
+.step {
+  padding: 12px;
+  background: #fbfdff;
+  border-left: 4px solid #cfe1ff;
+  border-radius: 6px;
+  position: relative;
+  width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.28s ease;
+  display: flex;
+  gap: 15px;
+  color: #1f2937;
+  transform: translateY(6px);
+}
 
-        .step.active {
-            opacity: 1;
-            pointer-events: auto;
-            box-shadow: 0 2px 8px rgba(15,23,42,0.08);
-        }
+/* Dempe ikke-aktive steg visuelt, men ikke skjul */
+.step:not(.active) { opacity: 0.9; transform: translateY(0); }
+.step.active { box-shadow: 0 2px 8px rgba(15,23,42,0.08); border-left-color: #0b69ff; transform: translateY(-4px); }
 
-        .step-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #0b69ff;
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            font-weight: 600;
-            font-size: 0.875rem;
-            flex-shrink: 0;
-        }
+/* Nummer og tekst */
+.step-number {
+  display:flex; align-items:center; justify-content:center;
+  background:#0b69ff; color:#fff; width:32px; height:32px; border-radius:50%;
+  font-weight:600; font-size:0.875rem; flex-shrink:0;
+}
+.step.active .step-number { background:#0f4fd6; }
+.step-text { color:#374151; font-size:0.9375rem; white-space:normal; word-break:break-word; }
 
-        .step.active .step-number {
-            background: #0f4fd6;
-        }
+/* Knapper: konsolidert */
+button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-prev {
+  background:#fbfdff; border:1px solid #e6ecf5; color:#374151;
+}
+.btn-next {
+  background:#0b69ff; border:1px solid #0b69ff; color:#fff;
+}
+button:disabled { opacity:0.5; cursor:not-allowed; }
 
-        .step-text {
-            color: #374151;
-            font-size: 0.9375rem;
-        }
+/* Step-teller */
+.step-counter { text-align:center; color:#64748b; font-size:0.875rem; margin-top:12px; }
 
-        /* Controls */
-        .controls {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 18px;
-        }
+/* Tilgjengelighet: redusert bevegelse */
+@media (prefers-reduced-motion: reduce) {
+  .section, .step { transition: none; animation: none; }
+}
 
-        button {
-            padding: 10px 20px;
-            border: 1px solid #e6ecf5;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: #fbfdff;
-            color: #1f2937;
-        }
-
-        .btn-prev {
-            background: #fbfdff;
-            border-color: #e6ecf5;
-            color: #374151;
-        }
-
-        .btn-prev:hover:not(:disabled) {
-            background: #f3f7fb;
-            border-color: #cfe1ff;
-        }
-
-        .btn-next {
-            background: #0b69ff;
-            border-color: #0b69ff;
-            color: white;
-        }
-
-        .btn-next:hover:not(:disabled) {
-            background: #0f4fd6;
-            border-color: #0f4fd6;
-        }
-
-        button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .step-counter {
-            text-align: center;
-            color: #64748b;
-            font-size: 0.875rem;
-            margin-top: 12px;
-        }
-
-
-        
-        /* Responsive */
-        @media (max-width: 640px) {
-            body { padding: 12px; }
-            .section { padding: 14px; }
-        }
-
-        .page::after{
-        content: "↓";
-        position: fixed;
-        right: 2rem;
-        bottom: 2rem;
-        width: 60px;
-        height: 60px;
-        display: grid;
-        place-items: center;
-        background: rgba(102,126,234,0.9);
-        color: #fff;
-        border-radius: 50%;
-        font-size: 2rem;
-        z-index: 50;
-        box-shadow: 0 10px 20px rgba(102,126,234,0.25);
-        transform: translateY(0);
-        opacity: 1;
-        transition: transform .36s cubic-bezier(.2,.9,.2,1), opacity .36s ease;
-        pointer-events: none;
-    }
-
-    .page.hide-scroll-indicator::after{
-        opacity: 0;
-        transform: translateY(10px) scale(.95);
-    }
-
-    @media (prefers-reduced-motion: reduce){
-        .page::after, .page.hide-scroll-indicator::after{ transition: none; transform: none; }
-    }
+/* Responsive små tweaks */
+@media (max-width:640px) {
+  body { padding: 12px; }
+  .section { padding: 1rem; margin-bottom: 1rem; }
+}
+/* ...existing code... */

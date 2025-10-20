@@ -15,6 +15,7 @@
             <h2 class="section-title">Svindlernes våpen er adferd — ikke alltid avansert kode</h2>
             <p class="lead">I et intervju med datasikkerhetsekspert Tom Heine fikk vi forklart hvordan svindlerne på nett opererer i dag. Vi lærte om ulike metoder, verktøy og hvordan menneskets fornuft ofte er vår største svakhet. Nettsvindel beskrives som et lavterskelarbeid der svindlerne bruker sosial manipulering og ferdig teknologi fra nettet — for eksempel ferdige «scripts» eller AI-genererte verktøy.</p>
         </section>
+
         <section id="process" class="section process">
             <h2 class="section-title">En typisk svindel kan settes opp slik:</h2>
              <ol class="steps-container" id="stepsContainer">
@@ -48,8 +49,53 @@
                 <span class="step-text">Når pengene flyttes mellom utenlandske kontoer eller brukes til digitale kjøp, blir pengene vanskelige å spore.</span>
             </li>
         </ol>
-        
-        <br>
+        <div class="controls">
+            <button class="btn-prev" id="prevBtn" onclick="previousStep()">← Forrige</button>
+            <button class="btn-next" id="nextBtn" onclick="nextStep()">Neste →</button>
+        </div>
+
+        <div class="step-counter">
+            Steg <span id="currentStep">1</span> av <span id="totalSteps">6</span>
+        </div>
+         <script>
+        let currentStep = 1;
+        const totalSteps = 6;
+
+        function showStep(step) {
+            const steps = document.querySelectorAll('.step');
+            steps.forEach(s => s.classList.remove('active'));
+            
+            const activeStep = document.querySelector(`[data-step="${step}"]`);
+            if (activeStep) {
+                activeStep.classList.add('active');
+            }
+
+            document.getElementById('currentStep').textContent = step;
+            document.getElementById('prevBtn').disabled = step === 1;
+            document.getElementById('nextBtn').disabled = step === totalSteps;
+            
+            currentStep = step;
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                showStep(currentStep + 1);
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                showStep(currentStep - 1);
+            }
+        }
+
+        // Initialisering
+        document.getElementById('totalSteps').textContent = totalSteps;
+        showStep(1);
+    </script>
+        </section>
+
+        <section id="human-factor" class="section human-factor">
             <p class="text">Slik kan en typisk svindel se ut. Mye av prosessen kan automatiseres, men det er alltid et menneske bak. Det svakeste leddet er som sagt oss mennesker og godviljen vår. Svindlerne vet hvordan menneske hjernen er «programmert» og når vi mister sunn fornuft. De spiller på følelser som frykt, tidspress, sexuell nytelse, hastverk, autoritet eller sosialt press.</p>
         </section>
 
@@ -67,7 +113,9 @@
         <section id="legal-ai" class="section legal-ai">
             <p class="text">Mange svindlere utnytter gråsoner i loven med pyramidespill eller falske investeringstips. Disse områdene er gråsoner for loven, der man betaler selv egne penger og lurer oss selv på en måte. Her er det vanskelig for politiet å gripe inn fordi man samtykker selv.</p>
             <p class="text">Med utviklingen til AI vil svindlerne bli mer effektive på flere områder, de vil blant annet bli enda flinkere på spear phishing. Ved å finne alle dine sosiale medier raskere, analysere dem og vite hva som er best å spille på. AI er veldig flinke på å analysere dine sosiale medier og tilpasse angrepet til enkeltpersoner. Altså de personaliserer svindelen bedre mot deg. Men når angrepet blir mer avansert vil forsvaret også bli det.</p>
-            <br>
+        </section>
+
+        <section id="security" class="section security">
             <p class="text">Selv om vår egen atferd ofte er den skjulte trussel på nettet er det egne tiltak man bør gjøre. Man bør aktivere to faktor autentisering som gjør det mye vanskeligere å få tilgang til kontoer selv om passordet blir stjålet. Passordbehandlere gjør det enkelt å ha kontroll på passordene sine, og ikke minst bruke unike passord. Å ha programmene og operativsystemet oppdatert er viktig da hackerne er flinke på å finne sikkerhetshull, som forhåpentligvis er dekket i de nyeste oppdateringene.</p>
         </section>
     </main>
@@ -75,8 +123,8 @@
     <footer id="site-footer" class="site-footer">
         <p class="copyright">&copy; 2024 Sample Page</p>
     </footer>
-   <script >
-    const sections = document.querySelectorAll('.section');
+    <script>
+        const sections = document.querySelectorAll('.section');
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -95,6 +143,6 @@ const observer = new IntersectionObserver(
 
 sections.forEach(section => observer.observe(section));
 
-   </script>
+    </script>
 </body>
 </html>
