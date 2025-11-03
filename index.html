@@ -6,153 +6,356 @@
     <title>Svindlernes våpen er adferd — ikke alltid avansert kode</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body id="page-top" class="page">
-    <header id="site-header" class="site-header">
+<body>
+    
+    <header class="header">
+        <h1>Nettsvindel Guide</h1>
     </header>
 
-    <main id="main-content" class="main-content">
-        <section id="intro" class="section intro">
+    <main>
+        <section class="section" id="intro">
             <h2 class="section-title">Svindlernes våpen er adferd — ikke alltid avansert kode</h2>
-            <p class="lead">I et intervju med datasikkerhetsekspert Tom Heine fikk vi forklart hvordan svindlerne på nett opererer i dag. Vi lærte om ulike metoder, verktøy og hvordan menneskets fornuft ofte er vår største svakhet. Nettsvindel beskrives som et lavterskelarbeid der svindlerne bruker sosial manipulering og ferdig teknologi fra nettet — for eksempel ferdige «scripts» eller AI-genererte verktøy.</p>
+            <p style="text-align: center; font-size: 1.1rem; line-height: 1.8;">
+                I et intervju med datasikkerhetsekspert Tom Heine fikk vi forklart hvordan svindlerne på nett opererer i dag. 
+                Vi lærte om ulike metoder, verktøy og hvordan menneskets fornuft ofte er vår største svakhet. Nettsvindel er en form for økonomisk kriminalitet der svindlere bruker internett til å lure folk til å gi fra seg penger eller personlig informasjon. Det beskrives som et lavterskelarbeid der svindlerne bruker sosial manipulering og ferdig teknologi fra nettet — 
+                for eksempel ferdige «scripts» eller AI-genererte verktøy.
+            </p>
         </section>
 
-        <section id="process" class="section process">
-    <h2 class="section-title">En typisk svindel kan settes opp slik:</h2>
-    <div class="steps-wrapper">
-        <ol class="steps-container" id="stepsContainer">
-            <li class="step active" data-step="1">
-                <span class="step-number">1</span>
-                <span class="step-text">
-                    Først må man samle inn data, det kan være eposter, telefonnummer, eller brukere på sosiale medier. 
-                    Disse kan kjøpes eller finnes offentlig på internett. AI i dag gjør dette mye enklere enn før.
-                </span>
+        <section class="section" id="stats">
+            <h2 class="section-title">Nettsvindel i Norge</h2>
+            <ul class="stats-grid" role="list">
+                <li class="stat-card">
+                    <span class="stat-number" data-target="15000">0</span>
+                    <span class="stat-label">Anmeldte saker årlig</span>
+                </li>
+            <li class="stat-card">
+                <span class="stat-number" data-target="450">0</span>
+                <span class="stat-label">Millioner kr tapt</span>
             </li>
-            <li class="step" data-step="2">
-                <span class="step-number">2</span>
-                <span class="step-text">
-                    Deretter målretter svindlerne angrepet ut fra hva de ønsker å oppnå. 
-                    Det kan være «spear phishing», eller vanlig «phishing», alt ettersom hva som er mest lønnsomt.
-                </span>
+            <li class="stat-card">
+                <span class="stat-number" data-target="73">0</span>
+                <span class="stat-label">% økning siste år</span>
             </li>
-            <li class="step" data-step="3">
-                <span class="step-number">3</span>
-                <span class="step-text">
-                    Så setter man opp lokkemiddelet, det kan være falske nettsider, eposter eller SMS. 
-                    Lokkemiddelet er laget for å etterligne noe ekte, ofte med ekte merkevarer.
-                </span>
-            </li>
-            <li class="step" data-step="4">
-                <span class="step-number">4</span>
-                <span class="step-text">
-                    Svindleren tar kontakt med offeret for å skape frykt eller stress. 
-                    Eksempel: «Din konto er sperret, trykk på lenken for å gjenopprette».
-                </span>
-            </li>
-            <li class="step" data-step="5">
-                <span class="step-number">5</span>
-                <span class="step-text">
-                    Svindleren forsøker å overføre penger fra offerets konto til ofte utenlandske kontoer.
-                </span>
-            </li>
-            <li class="step" data-step="6">
-                <span class="step-number">6</span>
-                <span class="step-text">
-                    Når pengene flyttes mellom utenlandske kontoer eller brukes til digitale kjøp, blir de vanskelige å spore.
-                </span>
-            </li>
-        </ol>
-    </div>
-
-    <div class="controls">
-        <button class="btn-prev" id="prevBtn" onclick="previousStep()">← Forrige</button>
-        <button class="btn-next" id="nextBtn" onclick="nextStep()">Neste →</button>
-    </div>
-
-    <div class="step-counter">
-        Steg <span id="currentStep">1</span> av <span id="totalSteps">6</span>
-    </div>
-</section>
-        <section id="human-factor" class="section human-factor">
-            <p class="text">Slik kan en typisk svindel se ut. Mye av prosessen kan automatiseres, men det er alltid et menneske bak. Det svakeste leddet er som sagt oss mennesker og godviljen vår. Svindlerne vet hvordan menneske hjernen er «programmert» og når vi mister sunn fornuft. De spiller på følelser som frykt, tidspress, sexuell nytelse, hastverk, autoritet eller sosialt press.</p>
-        </section>
-
-        <section id="guidelines" class="section guidelines">
-            <h2 class="section-title">Da kan man ha noen huskeregler:</h2>
-            <ul class="tips-list">
-                <li class="tip">Ingenting må gjøres nå.</li>
-                <li class="tip">Se på URL — ligner den på en annen, men har stavefeil er dette en ekte nettside egentlig?</li>
-                <li class="tip">Vær skeptisk til betalingskrav i krypto eller gavekort.</li>
-                <li class="tip">Er noe for godt til å være sant, er det også det.</li>
-                <li class="tip">Ikke del passord eller annet kritisk informasjon.</li>
             </ul>
         </section>
 
-        <section id="legal-ai" class="section legal-ai">
-            <p class="text">Mange svindlere utnytter gråsoner i loven med pyramidespill eller falske investeringstips. Disse områdene er gråsoner for loven, der man betaler selv egne penger og lurer oss selv på en måte. Her er det vanskelig for politiet å gripe inn fordi man samtykker selv.</p>
-            <p class="text">Med utviklingen til AI vil svindlerne bli mer effektive på flere områder, de vil blant annet bli enda flinkere på spear phishing. Ved å finne alle dine sosiale medier raskere, analysere dem og vite hva som er best å spille på. AI er veldig flinke på å analysere dine sosiale medier og tilpasse angrepet til enkeltpersoner. Altså de personaliserer svindelen bedre mot deg. Men når angrepet blir mer avansert vil forsvaret også bli det.</p>
-        <br>
-            <p class="text">Selv om vår egen atferd ofte er den skjulte trussel på nettet er det egne tiltak man bør gjøre. Man bør aktivere to faktor autentisering som gjør det mye vanskeligere å få tilgang til kontoer selv om passordet blir stjålet. Passordbehandlere gjør det enkelt å ha kontroll på passordene sine, og ikke minst bruke unike passord. Å ha programmene og operativsystemet oppdatert er viktig da hackerne er flinke på å finne sikkerhetshull, som forhåpentligvis er dekket i de nyeste oppdateringene.</p>
+        <section class="section" id="process">
+            <h2 class="section-title">En typisk svindel - steg for steg</h2>
+
+            <span class="timeline-line" aria-hidden="true"></span>
+            <span class="timeline-progress" id="timelineProgress" aria-hidden="true"></span>
+
+            <ol class="timeline" aria-label="Svindelprosess">
+            <li class="timeline-step">
+                <span class="timeline-number">1</span>
+                <p class="timeline-content">
+                <strong>Datainnsamling:</strong> Først må man samle inn data, det kan være eposter, telefonnummer, eller brukere på sosiale medier. 
+                Disse kan kjøpes eller finnes offentlig på internett. AI i dag gjør dette mye enklere enn før.
+                </p>
+            </li>
+
+            <li class="timeline-step">
+                <span class="timeline-number">2</span>
+                <p class="timeline-content">
+                <strong>Målretting:</strong> Deretter målretter svindlerne angrepet ut fra hva de ønsker å oppnå. 
+                Det kan være 
+                <span class="tooltip">«spear phishing»
+                    <span class="tooltip-text">Spear phishing er en målrettet phishing-metode der svindleren har researched offeret og lager personlige meldinger.</span>
+                </span>, 
+                eller vanlig «phishing», alt ettersom hva som er mest lønnsomt.
+                </p>
+            </li>
+
+            <li class="timeline-step">
+                <span class="timeline-number">3</span>
+                <p class="timeline-content">
+                <strong>Lokkemiddel:</strong> Så setter man opp lokkemiddelet, det kan være falske nettsider, eposter eller SMS. 
+                Lokkemiddelet er laget for å etterligne noe ekte, ofte med ekte merkevarer.
+                </p>
+            </li>
+
+            <li class="timeline-step">
+                <span class="timeline-number">4</span>
+                <p class="timeline-content">
+                <strong>Kontakt:</strong> Svindleren tar kontakt med offeret for å skape frykt eller stress. 
+                Eksempel: «Din konto er sperret, trykk på lenken for å gjenopprette».
+                </p>
+            </li>
+
+            <li class="timeline-step"></li>
+                <span class="timeline-number">5</span>
+                <p class="timeline-content">
+                <strong>Pengeoverføring:</strong> Svindleren forsøker å overføre penger fra offerets konto til ofte utenlandske kontoer.
+                </p>
+            </li>
+
+            <li class="timeline-step">
+                <span class="timeline-number">6</span>
+                <p class="timeline-content">
+                <strong>Pengevask:</strong> Når pengene flyttes mellom utenlandske kontoer eller brukes til digitale kjøp, blir de vanskelige å spore.
+                </p>
+            </li>
+            </ol>
         </section>
-    </main>
 
-    <footer id="site-footer" class="site-footer">
-        <p class="copyright">&copy; 2024 Sample Page</p>
-    </footer>
+        <section class="section" id="quiz">
+            <h2 class="section-title">Test deg selv: Kan du spotte svindelen?</h2>
+            <form class="quiz-container" onsubmit="return false" aria-labelledby="quiz-title">
+            <p class="quiz-question" id="quiz-title">
+                Du mottar en SMS fra "Banken din" som sier: "VIKTIG: Din konto er midlertidig sperret. Logg inn her umiddelbart: bit.ly/bank-login123"
+                <br><br>Er dette legitimt?
+            </p>
+            <ul class="quiz-options" role="list">
+                <li>
+                <button type="button" class="quiz-option" onclick="checkAnswer(this, false)">
+                    Ja, det ser ut som en vanlig sikkerhetsvarsel
+                </button>
+                </li>
+                <li>
+                <button type="button" class="quiz-option" onclick="checkAnswer(this, true)">
+                    Nei, dette er sannsynligvis svindel
+                </button>
+                </li>
+            </ul>
+            <output class="quiz-feedback" id="quizFeedback" aria-live="polite"></output>
+            </form>
+        </section>
+
+        <section class="section" id="comparison">
+            <h2 class="section-title">Falsk vs. Ekte - Dra for å sammenligne</h2>
+            <figure class="comparison-container">
+            <section class="comparison-slider" id="comparisonSlider" role="application" aria-label="Bilde sammenligning">
+                <aside class="comparison-image fake-image" aria-hidden="false">
+                FALSK SIDE<br>
+                <small style="font-size: 0.8rem;">bankk-loginn.com</small>
+                </aside>
+                <aside class="comparison-image real-image" id="realImage" aria-hidden="false">
+                EKTE SIDE<br>
+                <small style="font-size: 0.8rem;">bank-login.no</small>
+                </aside>
+                <button class="slider-handle" id="sliderHandle" aria-label="Flytt for å sammenligne">
+                <span class="slider-button">⟷</span>
+                </button>
+            </section>
+            </figure>
+        </section>
+
+        <section class="section" id="guidelines">
+            <h2 class="section-title">Huskeregler - Klikk for å lære mer</h2>
+            <ul class="tips-grid" role="list">
+            <li class="tip-card">
+                <button class="tip-header" onclick="toggleTip(this)" aria-expanded="false">
+                <span class="tip-title">Ingenting må gjøres NÅ</span>
+                <span class="tip-icon">▼</span>
+                </button>
+                <p class="tip-content">
+                Svindlere skaper kunstig tidspress for å få deg til å handle raskt uten å tenke. 
+                Legitime bedrifter gir deg alltid tid. Ta en pause, pust, og tenk deg om før du handler.
+                </p>
+            </li>
+
+            <li class="tip-card">
+                <button class="tip-header" onclick="toggleTip(this)" aria-expanded="false">
+                <span class="tip-title">Sjekk URL-en nøye</span>
+                <span class="tip-icon">▼</span>
+                </button>
+                <p class="tip-content">
+                Svindlere bruker ofte domener som ligner: "bankk.com" i stedet for "bank.com", 
+                eller "bank-sikkerhet.com" i stedet for "bank.no". Dobbeltsjekk alltid hele URLen.
+                </p>
+            </li>
+
+            <li class="tip-card">
+                <button class="tip-header" onclick="toggleTip(this)" aria-expanded="false">
+                <span class="tip-title">Vær skeptisk til krypto og gavekort</span>
+                <span class="tip-icon">▼</span>
+                </button>
+                <p class="tip-content">
+                Ingen legitim bedrift eller myndighet vil kreve betaling i kryptovaluta eller gavekort. 
+                Dette er klassiske tegn på svindel fordi disse betalingsmetodene ikke kan spores eller reverseres.
+                </p>
+            </li>
+
+            <li class="tip-card">
+                <button class="tip-header" onclick="toggleTip(this)" aria-expanded="false">
+                <span class="tip-title">For godt til å være sant?</span>
+                <span class="tip-icon">▼</span>
+                </button>
+                <p class="tip-content">
+                Vant du en konkurranse du ikke meldte deg på? Tilbud om rask fortjeneste uten risiko? 
+                Gratis iPhone? Hvis det virker for godt til å være sant, er det nesten alltid det.
+                </p>
+            </li>
+
+            <li class="tip-card">
+                <button class="tip-header" onclick="toggleTip(this)" aria-expanded="false">
+                <span class="tip-title">Aldri del passord</span>
+                <span class="tip-icon">▼</span>
+                </button>
+                <p class="tip-content">
+                Ingen legitim bedrift vil noensinne spørre etter passordet ditt via e-post, SMS eller telefon. 
+                Banken din vet ikke passordet ditt, og trenger det ikke.
+                </p>
+            </li>
+            </ul>
+        </section>
+
+        <section class="section" id="protection">
+            <h2 class="section-title">Beskytt deg selv</h2>
+            <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+            Med utviklingen til AI vil svindlerne bli mer effektive på flere områder, de vil blant annet bli enda flinkere på spear phishing. 
+            Ved å finne alle dine sosiale medier raskere, analysere dem og vite hva som er best å spille på. 
+            Men når angrepet blir mer avansert vil forsvaret også bli det.
+            </p>
+            <p style="line-height: 1.8;">
+            Selv om vår egen atferd ofte er den skjulte trussel på nettet er det egne tiltak man bør gjøre. 
+            Man bør aktivere 
+            <span class="tooltip">to-faktor autentisering
+                <span class="tooltip-text">To-faktor autentisering (2FA) krever to former for identifikasjon før du får tilgang: noe du vet (passord) og noe du har (telefon/app).</span>
+            </span> 
+            som gjør det mye vanskeligere å få tilgang til kontoer selv om passordet blir stjålet. 
+            Passordbehandlere gjør det enkelt å ha kontroll på passordene sine, og ikke minst bruke unike passord. 
+            Å ha programmene og operativsystemet oppdatert er viktig da hackerne er flinke på å finne sikkerhetshull, 
+            som forhåpentligvis er dekket i de nyeste oppdateringene.
+            </p>
+        </section>
+
     <script>
+
         const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    if (entry.target.id === 'stats') {
+                        animateStats();
+                    }
+                    
+                    if (entry.target.id === 'process') {
+                        animateTimeline();
+                    }
+                }
+            });
+        }, { threshold: 0.2 });
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
-    });
-  },
-  {
-    threshold: 0.5
-  }
-);
+        sections.forEach(section => observer.observe(section));
 
-sections.forEach(section => observer.observe(section));
+        function animateStats() {
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('animate');
+                    const number = card.querySelector('.stat-number');
+                    const target = parseInt(number.getAttribute('data-target'));
+                    animateNumber(number, target);
+                }, index * 200);
+            });
+        }
 
+        function animateNumber(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 30);
+        }
 
- let currentStep = 1;
-        const totalSteps = 6;
-
-        function showStep(step) {
-            const steps = document.querySelectorAll('.step');
-            steps.forEach(s => s.classList.remove('active'));
+        function animateTimeline() {
+            const steps = document.querySelectorAll('.timeline-step');
+            const progress = document.getElementById('timelineProgress');
             
-            const activeStep = document.querySelector(`[data-step="${step}"]`);
-            if (activeStep) {
-                activeStep.classList.add('active');
-            }
+            steps.forEach((step, index) => {
+                setTimeout(() => {
+                    step.classList.add('active');
+                    const progressPercent = ((index + 1) / steps.length) * 100;
+                    progress.style.height = progressPercent + '%';
+                }, index * 300);
+            });
+        }
 
-            document.getElementById('currentStep').textContent = step;
-            document.getElementById('prevBtn').disabled = step === 1;
-            document.getElementById('nextBtn').disabled = step === totalSteps;
+        let quizAnswered = false;
+
+        function checkAnswer(element, isCorrect) {
+            if (quizAnswered) return;
             
-            currentStep = step;
-        }
-
-        function nextStep() {
-            if (currentStep < totalSteps) {
-                showStep(currentStep + 1);
+            quizAnswered = true;
+            const feedback = document.getElementById('quizFeedback');
+            const allOptions = document.querySelectorAll('.quiz-option');
+            
+            allOptions.forEach(opt => opt.style.pointerEvents = 'none');
+            
+            if (isCorrect) {
+                element.classList.add('correct');
+                feedback.className = 'quiz-feedback show correct';
+                feedback.innerHTML = '<strong>✅ Riktig!</strong> Dette er et klassisk phishing-forsøk. Røde flagg: kort URL (bit.ly), hastemelding, og mistenkelig avsender. En ekte bank vil aldri sende slike meldinger.';
+            } else {
+                element.classList.add('wrong');
+                feedback.className = 'quiz-feedback show wrong';
+                feedback.innerHTML = '<strong>❌ Feil.</strong> Dette er faktisk svindel. Banker sender aldri lenker i SMS for innlogging, og bruker ikke kortlenketjenester som bit.ly. Vær alltid skeptisk!';
             }
         }
 
-        function previousStep() {
-            if (currentStep > 1) {
-                showStep(currentStep - 1);
-            }
+        function toggleTip(header) {
+            const card = header.parentElement;
+            card.classList.toggle('expanded');
         }
 
-        // Initialisering
-        document.getElementById('totalSteps').textContent = totalSteps;
-        showStep(1);
+        const slider = document.getElementById('comparisonSlider');
+        const handle = document.getElementById('sliderHandle');
+        const realImage = document.getElementById('realImage');
+        let isDragging = false;
+
+        handle.addEventListener('mousedown', () => {
+            isDragging = true;
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            
+            const rect = slider.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            
+            if (x < 0) x = 0;
+            if (x > rect.width) x = rect.width;
+            
+            const percentage = (x / rect.width) * 100;
+            handle.style.left = percentage + '%';
+            realImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        });
+
+        handle.addEventListener('touchstart', () => {
+            isDragging = true;
+        });
+
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            
+            const rect = slider.getBoundingClientRect();
+            let x = e.touches[0].clientX - rect.left;
+            
+            if (x < 0) x = 0;
+            if (x > rect.width) x = rect.width;
+            
+            const percentage = (x / rect.width) * 100;
+            handle.style.left = percentage + '%';
+            realImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        });
     </script>
 </body>
 </html>
