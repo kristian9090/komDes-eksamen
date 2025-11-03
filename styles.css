@@ -109,7 +109,8 @@ body {
     background-attachment: fixed;
 }
 #guidelines {
-  background-image: url("resources/.jpg");
+  background-image: url("resources/content-marketing-3160470_1280.jpg");
+  /* Bilde tatt ifra: https://pixabay.com/illustrations/content-marketing-megaphone-3160470/ */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -117,6 +118,11 @@ body {
     width: 100%;
     background-attachment: fixed;
 }
+.tips-list{
+    background: aliceblue;
+    border-radius: 6px;
+}
+
 #legal-ai {
   background-image: url("resources/.jpg");
   background-position: center;
