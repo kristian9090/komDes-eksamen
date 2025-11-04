@@ -94,6 +94,14 @@
             position: relative;  
             height: 100vh;
             width: 100vh absolute;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            padding: 3rem;
             p, h2 {
                 background-color: #fff;
                 text-align: center;
@@ -114,7 +122,6 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(0,0,0,0.35);
         pointer-events: none;
         z-index: 0;
         -webkit-backdrop-filter: blur(10px);
@@ -129,48 +136,14 @@
         }
 
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, #0b69ff 0%, #00d4ff 100%);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            color: white;
-            transform: scale(0.9);
-            opacity: 0;
-            transition: all 0.5s ease;
-        }
-
-        .stat-card.animate {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
+       
         .quiz-container {
             background: var(--bg-secondary);
             border: 2px solid var(--border);
             border-radius: 10px;
             padding: 2rem;
             margin: 2rem 0;
-        }
+        } 
 
         .quiz-question {
             font-size: 1.2rem;
@@ -234,7 +207,42 @@
             border: 2px solid #ef4444;
         }
 
-        /* Expandable Cards */
+
+        .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #0b69ff 0%, #00d4ff 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.stat-card.animate {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
         .tips-grid {
             display: grid;
             gap: 1rem;
@@ -291,7 +299,6 @@
             padding: 1.5rem;
         }
 
-        /* Interactive Step Process */
         .timeline {
             position: relative;
             padding: 2rem 0;
@@ -354,7 +361,6 @@
             color: var(--text-secondary);
         }
 
-        /* Tooltip */
         .tooltip {
             position: relative;
             display: inline-block;
@@ -388,7 +394,6 @@
             opacity: 1;
         }
 
-        /* Comparison Slider */
         .comparison-container {
             position: relative;
             width: 100%;
