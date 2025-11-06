@@ -97,7 +97,9 @@ main {
 
 .section-inner .section-title,
 .section-inner p {
-  text-align: center;
+  text-align: left;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .section.visible {
