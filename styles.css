@@ -77,8 +77,8 @@ main {
   transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease;
 }
 .section-inner {
-  background: transparent;
-  /* border: 1px solid var(--border); */
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
   border-radius: 10px;
   box-shadow: 0 6px 14px var(--shadow);
   padding: 2.5rem;
@@ -163,7 +163,7 @@ main {
 #intro > .section-inner {
   position: relative;
   z-index: 2;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.95);
   color: #111827;
 }
 
