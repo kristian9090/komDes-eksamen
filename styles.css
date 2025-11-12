@@ -6,6 +6,7 @@
 
 :root {
   --header-h: 80px;
+  --intro-radius: 12px;
   --bg-primary: #858585;
   --bg-secondary: #fff;
   --text-primary: #111827;
@@ -71,7 +72,7 @@ main {
   justify-content: center;
   padding: 2.5rem;
   margin: 0 auto 2rem;
-  max-width: 1200px;
+  /* max-width: 40%; */
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease;
@@ -115,13 +116,12 @@ main {
   text-align: center;
 }
 #intro {
-  background-image: url("resources/scam.png");
+  background-image: url("resources/credit-card.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   height: 100vh;
-  width: 100vh absolute;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -148,11 +148,13 @@ main {
   z-index: 1;
 }
 
+/* Keep the blurred layer if you want it, but ensure rounded corners are applied
+   to the main #intro element so the background image respects them. */
 #intro::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("resources/scam.png");
+  background-image: url("resources/credit-card.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -167,6 +169,19 @@ main {
   z-index: 2;
   background: rgba(255, 255, 255, 0.95);
   color: #111827;
+  /* keep the inner content narrower so it sits nicely inside the rounded bg */
+  width: 90%;
+  max-width: 90vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Apply rounded corners to the intro container so the background image is clipped */
+#intro {
+  border-radius: var(--intro-radius);
+  /* for browsers that support mask-image ensure background is clipped to the radius */
+  mask-image: radial-gradient(white, black);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 #intro .section-title,
