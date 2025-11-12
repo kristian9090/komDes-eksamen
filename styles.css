@@ -72,10 +72,16 @@ main {
   justify-content: center;
   padding: 2.5rem;
   margin: 0 auto 2rem;
-  /* max-width: 40%; */
+  /* sections are centered; non-intro sections will be limited to 40% width below */
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease;
+}
+
+/* Make every section except the intro a 40% wide column (desktop) */
+.section:not(#intro) {
+  width: 40%;
+  max-width: 40%;
 }
 .section-inner {
   background: var(--bg-secondary);
