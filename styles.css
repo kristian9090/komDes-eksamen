@@ -16,13 +16,15 @@
   --border: #e6ecf5;
   --shadow: rgba(15, 23, 42, 0.04);
   
-  /* Diverse section backgrounds with more color variety */
-  --section-bg-1: #f0f9ff; /* Light blue */
-  --section-bg-2: #fef3c7; /* Light yellow */
-  --section-bg-3: #ede9fe; /* Light purple */
-  --section-bg-4: #dcfce7; /* Light green */
-  --section-bg-5: #fee2e2; /* Light red/pink */
-  --section-bg-6: #fae8ff; /* Light magenta */
+  /* Dark section backgrounds with contrasting light text */
+  --section-bg-1: #1e3a28; /* Dark green */
+  --section-bg-2: #4a1e1e; /* Dark red */
+  --section-bg-3: #1e2a4a; /* Dark blue */
+  --section-bg-4: #2a2a2a; /* Dark gray */
+  --section-bg-5: #3d2817; /* Brown */
+  
+  --text-light: #f8f9fa;
+  --text-light-secondary: #e0e0e0;
 }
 
 [data-theme="dark"] {
@@ -100,22 +102,52 @@ main {
 /* Alternating background colors for sections - intro keeps its own background image */
 #process {
   background-color: var(--section-bg-1);
+  color: var(--text-light);
+}
+
+#process .section-inner {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-primary);
 }
 
 #quiz {
   background-color: var(--section-bg-2);
+  color: var(--text-light);
+}
+
+#quiz .section-inner {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-primary);
 }
 
 #comparison {
   background-color: var(--section-bg-3);
+  color: var(--text-light);
+}
+
+#comparison .section-inner {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-primary);
 }
 
 #guidelines {
   background-color: var(--section-bg-4);
+  color: var(--text-light);
+}
+
+#guidelines .section-inner {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-primary);
 }
 
 #protection {
   background-color: var(--section-bg-5);
+  color: var(--text-light);
+}
+
+#protection .section-inner {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-primary);
 }
 
 /* Make every section except the intro a 40% wide column (desktop) */
