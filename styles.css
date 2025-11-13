@@ -15,6 +15,14 @@
   --accent-dark: #0f4fd6;
   --border: #e6ecf5;
   --shadow: rgba(15, 23, 42, 0.04);
+  
+  /* Diverse section backgrounds with more color variety */
+  --section-bg-1: #f0f9ff; /* Light blue */
+  --section-bg-2: #fef3c7; /* Light yellow */
+  --section-bg-3: #ede9fe; /* Light purple */
+  --section-bg-4: #dcfce7; /* Light green */
+  --section-bg-5: #fee2e2; /* Light red/pink */
+  --section-bg-6: #fae8ff; /* Light magenta */
 }
 
 [data-theme="dark"] {
@@ -35,10 +43,10 @@ html {
 body {
   font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue",
     Arial;
-  background: var(--bg-primary);
+  background: var(--section-bg-1);
   color: var(--text-primary);
   line-height: 1.8;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 1.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
   /* Improved text rendering for better readability */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -86,8 +94,28 @@ main {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
-              background 0.3s ease;
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Alternating background colors for sections - intro keeps its own background image */
+#process {
+  background-color: var(--section-bg-1);
+}
+
+#quiz {
+  background-color: var(--section-bg-2);
+}
+
+#comparison {
+  background-color: var(--section-bg-3);
+}
+
+#guidelines {
+  background-color: var(--section-bg-4);
+}
+
+#protection {
+  background-color: var(--section-bg-5);
 }
 
 /* Make every section except the intro a 40% wide column (desktop) */

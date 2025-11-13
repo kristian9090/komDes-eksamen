@@ -203,10 +203,27 @@
     <script>
 
         const sections = document.querySelectorAll('.section');
+        
+        // Map section IDs to background colors
+        const sectionBackgrounds = {
+            'intro': 'var(--section-bg-1)',
+            'process': 'var(--section-bg-1)',
+            'quiz': 'var(--section-bg-2)',
+            'comparison': 'var(--section-bg-3)',
+            'guidelines': 'var(--section-bg-4)',
+            'protection': 'var(--section-bg-5)'
+        };
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    
+                    // Change body background color based on current section
+                    const sectionId = entry.target.id;
+                    if (sectionBackgrounds[sectionId]) {
+                        document.body.style.backgroundColor = sectionBackgrounds[sectionId];
+                    }
                     
                     if (entry.target.id === 'stats') {
                         animateStats();
