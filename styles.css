@@ -43,29 +43,6 @@ body {
   letter-spacing: 0.01em;
 }
 
-/*.header {*/
-/*  position: fixed;*/
-/*  top: 0;*/
-/*  left: 0;*/
-/*  right: 0;*/
-/*  background: rgba(255, 255, 255, 0.98);*/
-/*  backdrop-filter: blur(10px);*/
-/*  border-bottom: 1px solid var(--border);*/
-/*  padding: 1rem 2rem;*/
-/*  display: flex;*/
-/*  justify-content: space-between;*/
-/*  align-items: center;*/
-/*  z-index: 999;*/
-/*  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);*/
-/*}*/
-
-/*.header h1 {*/
-/*  font-size: 1.3rem;*/
-/*  color: var(--text-primary);*/
-/*  font-weight: 700;*/
-/*  letter-spacing: -0.01em;*/
-/*}*/
-
 main {
   margin-top: 20px;
   padding: 1.5rem;
@@ -539,7 +516,6 @@ main {
   }
 }
 
-/* Ultra-small devices: make everything comfortably compact */
 @media (max-width: 400px) {
   :root { 
     --header-h: 64px; 
@@ -572,19 +548,16 @@ main {
     padding: 1.25rem; 
   }
 
-  /* Intro overlay text boxes */
   #intro p,
   #intro h2 { 
     padding: 1rem 1.25rem; 
   }
 
-  /* Quiz options tighter */
   .quiz-option { 
     padding: 1rem 1rem; 
     font-size: 0.95rem; 
   }
 
-  /* Timeline compact layout */
   .timeline-line, .timeline-progress { 
     left: 1.25rem; 
   }
@@ -599,7 +572,6 @@ main {
     margin-bottom: 2rem; 
   }
 
-  /* Comparison slider smaller */
   .comparison-slider { 
     height: 220px; 
   }
@@ -610,7 +582,6 @@ main {
     border-width: 2px; 
   }
 
-  /* Tooltips fit viewport */
   .tooltip-text { 
     width: 80vw; 
     margin-left: calc(-0.5 * 80vw); 
