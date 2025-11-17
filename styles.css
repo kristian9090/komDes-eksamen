@@ -128,7 +128,7 @@ main {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   padding: 3rem;
-  max-width: 1200px;
+  max-width: 80%;
   width: 100%;
   box-sizing: border-box;
   opacity: 0;
@@ -469,7 +469,7 @@ main {
 .comparison-container {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 50rem;
   margin: 2rem auto;
   overflow: hidden;
   border-radius: 10px;
@@ -516,7 +516,7 @@ main {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 4px;
+  width: 0.25rem;
   height: 100%;
   background: white;
   cursor: ew-resize;
@@ -528,8 +528,8 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
+  width: 3rem;
+  height: 3rem;
   background: white;
   border: 3px solid var(--accent);
   border-radius: 50%;
@@ -541,13 +541,13 @@ main {
   color: var(--accent);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .header h1 {
     font-size: 1rem;
   }
 
   main {
-    padding: 12px;
+    padding: 1rem;
   }
 
   .section {
