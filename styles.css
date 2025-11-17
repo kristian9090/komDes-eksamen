@@ -43,31 +43,31 @@ body {
   letter-spacing: 0.01em;
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 999;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
+/*.header {*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  background: rgba(255, 255, 255, 0.98);*/
+/*  backdrop-filter: blur(10px);*/
+/*  border-bottom: 1px solid var(--border);*/
+/*  padding: 1rem 2rem;*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*  z-index: 999;*/
+/*  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);*/
+/*}*/
 
-.header h1 {
-  font-size: 1.3rem;
-  color: var(--text-primary);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
+/*.header h1 {*/
+/*  font-size: 1.3rem;*/
+/*  color: var(--text-primary);*/
+/*  font-weight: 700;*/
+/*  letter-spacing: -0.01em;*/
+/*}*/
 
 main {
-  margin-top: 80px;
+  margin-top: 20px;
   padding: 1.5rem;
 }
 
