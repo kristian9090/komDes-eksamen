@@ -201,10 +201,8 @@
         </section>
 
     <script>
-
         const sections = document.querySelectorAll('.section');
         
-        // Map section IDs to background colors
         const sectionBackgrounds = {
             'intro': 'var(--section-bg-1)',
             'process': 'var(--section-bg-1)',
@@ -219,14 +217,9 @@
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                     
-                    // Change body background color based on current section
                     const sectionId = entry.target.id;
                     if (sectionBackgrounds[sectionId]) {
                         document.body.style.backgroundColor = sectionBackgrounds[sectionId];
-                    }
-                    
-                    if (entry.target.id === 'stats') {
-                        animateStats();
                     }
                     
                     if (entry.target.id === 'process') {
@@ -237,32 +230,6 @@
         }, { threshold: 0.2 });
 
         sections.forEach(section => observer.observe(section));
-
-        function animateStats() {
-            const statCards = document.querySelectorAll('.stat-card');
-            statCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('animate');
-                    const number = card.querySelector('.stat-number');
-                    const target = parseInt(number.getAttribute('data-target'));
-                    animateNumber(number, target);
-                }, index * 200);
-            });
-        }
-
-        function animateNumber(element, target) {
-            let current = 0;
-            const increment = target / 50;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target.toLocaleString();
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current).toLocaleString();
-                }
-            }, 30);
-        }
 
         function animateTimeline() {
             const steps = document.querySelectorAll('.timeline-step');
@@ -300,8 +267,7 @@
         }
 
         function toggleTip(header) {
-            const card = header.parentElement;
-            card.classList.toggle('expanded');
+            header.parentElement.classList.toggle('expanded');
         }
 
         const slider = document.getElementById('comparisonSlider');
@@ -309,48 +275,27 @@
         const realImage = document.getElementById('realImage');
         let isDragging = false;
 
-        handle.addEventListener('mousedown', () => {
-            isDragging = true;
-        });
+        function updateSliderPosition(x) {
+            const rect = slider.getBoundingClientRect();
+            let position = x - rect.left;
+            
+            position = Math.max(0, Math.min(position, rect.width));
+            
+            const percentage = (position / rect.width) * 100;
+            handle.style.left = percentage + '%';
+            realImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        }
 
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
-
+        handle.addEventListener('mousedown', () => isDragging = true);
+        document.addEventListener('mouseup', () => isDragging = false);
         document.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            
-            const rect = slider.getBoundingClientRect();
-            let x = e.clientX - rect.left;
-            
-            if (x < 0) x = 0;
-            if (x > rect.width) x = rect.width;
-            
-            const percentage = (x / rect.width) * 100;
-            handle.style.left = percentage + '%';
-            realImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+            if (isDragging) updateSliderPosition(e.clientX);
         });
 
-        handle.addEventListener('touchstart', () => {
-            isDragging = true;
-        });
-
-        document.addEventListener('touchend', () => {
-            isDragging = false;
-        });
-
+        handle.addEventListener('touchstart', () => isDragging = true);
+        document.addEventListener('touchend', () => isDragging = false);
         document.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            
-            const rect = slider.getBoundingClientRect();
-            let x = e.touches[0].clientX - rect.left;
-            
-            if (x < 0) x = 0;
-            if (x > rect.width) x = rect.width;
-            
-            const percentage = (x / rect.width) * 100;
-            handle.style.left = percentage + '%';
-            realImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+            if (isDragging) updateSliderPosition(e.touches[0].clientX);
         });
     </script>
 </body>
